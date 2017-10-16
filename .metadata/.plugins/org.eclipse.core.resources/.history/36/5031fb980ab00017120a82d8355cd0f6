@@ -1,0 +1,40 @@
+package com.priya.movieapp.Service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.priya.movieapp.Interface.MovieInterface;
+import com.priya.movieapp.Model.MovieModel;
+
+@Service
+public class MovieService implements MovieInterface{
+
+	
+	
+static {
+	Movie=DummyMovie();
+}
+	
+@Override
+public List<MovieModel> getAllMovies( )
+{
+    return resulset;
+}
+
+@Override
+public void addMovie(MovieModel moviemodel)
+{
+    resultset.add(moviemodel);
+}
+
+private static List<MovieModel> DummyMovie(){
+    List<MovieModel> resultset = new ArrayList<MovieModel>();
+       
+       resultset.add(new MovieModel(1, "ascl", "sddefsc", "gvhjgjjh");
+       resultset.add(new MovieModel(2, "ascsl", "sdcdefsc", "gvhjcgjjh");
+}
+	
+}

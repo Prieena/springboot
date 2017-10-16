@@ -1,0 +1,63 @@
+package com.priya.movieapp.Service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+import com.priya.movieapp.Repository.MovieRepository;
+import com.priya.movieapp.domain.MovieModel;
+
+@Service
+public class MovieService {
+
+	  @Autowired
+	    public MovieRepository movieRepository;
+	    
+	   static List<MovieModel> resultList = new ArrayList<>(
+	           Arrays.asList(new MovieModel(1,"social", "sddasc","hshs"),
+	                          new MovieModel(2,"ascl", "sddefsc","haha"),
+	                          new MovieModel(3,"sacvha", "sac", "haha")));
+	   
+	   
+	   public List<MovieModel> getAllMovie() {
+	       
+	       List<MovieModel> movieList = (List<MovieModel>) movieRepository.findAll();
+	       return movieList;
+	   }
+	   // public Restaurant getRestaurant(String id)
+	   // {
+	   // return topics.stream().filter(t->t.getId().equals(id)).findFirst().get();
+	   // }
+	   /*public void addMovie(Movie movie) {
+	       resultList.add(movie);
+	   }*/
+	   
+	   public MovieModel addMovie(MovieModel movie) {
+	       movieRepository.save(movie);
+	       return movie;
+	   }
+	   
+	   public static MovieModel findById(int id) {
+	       for (MovieModel movie:resultList) {
+	           if (movie.getMovieId()==id)
+	               return movie;
+	       }
+	       return null;
+	   }
+	   
+	   public void deleteMovie(int id) {
+	       for (MovieModel movie:resultList) {
+	           if (movie.getMovieId()==id)
+	               resultList.remove(movie);
+	       }
+	   
+	   }
+	   public static void updateMovies(MovieModel movie) {
+	       int index= resultList.indexOf(movie);
+	       resultList.set(index, movie);
+	   }
+}

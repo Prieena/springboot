@@ -1,0 +1,81 @@
+package com.priya.movieapp.Controller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.priya.movieapp.Model.MovieModel;
+
+@RestController
+//@RequestMapping("/v0.1/MovieService")
+public class MovieController {
+	
+
+	
+	 @RequestMapping(method = RequestMethod.POST)
+	 public ResponseEntity<MovieModel> create() {
+	        MovieModel md1=new MovieModel(1,"Arrow","gvgf","cwec");
+	        System.out.println("helloworld");
+	        return new ResponseEntity<MovieModel>(md1,HttpStatus.OK);
+	 }
+	 
+	 
+	@GetMapping("/Movies")
+    public ResponseEntity<MovieModel> read() {
+        MovieModel md2=new MovieModel(1,"Arrow","gvgf","cwec");
+        System.out.println("helloworld");
+        return new ResponseEntity<MovieModel>(md2,HttpStatus.OK);
+    }
+	
+	
+	 @RequestMapping(value="/Movies", method=RequestMethod.PUT)
+	    public ResponseEntity<MovieModel> update() {
+	        MovieModel md3=new MovieModel(2,"ha","haha","hahaha");
+	        System.out.println("helloworld");
+	        return new ResponseEntity<MovieModel>(md3,HttpStatus.OK);
+	    }
+	 
+	
+	 @RequestMapping(value="/Movies", method = RequestMethod.DELETE)
+	 public ResponseEntity<MovieModel> delete() {
+	        MovieModel md4=new MovieModel(2,"ha","haha","hahaha");
+	        System.out.println("helloworld");
+	        return new ResponseEntity<MovieModel>(md4,HttpStatus.OK);
+	 }
+	 
+	
+	 
+	
+	
+	
+//	@RequestMapping(value="/Movies",method=RequestMethod.GET)
+//	public void getAllMoviebyId() {
+//		System.out.println("hello");
+//	}
+	
+//	@RequestMapping(value="/Movies",method=RequestMethod.GET)
+//	public void getAllMoviebyName() {
+//		
+//	}
+//	
+//	@RequestMapping(value="/Movies",method=RequestMethod.POST)
+//	public void getSaved() {
+//		System.out.println("hello from post");
+//	}
+//	
+//	@RequestMapping(value="/Movies",method=RequestMethod.DELETE)
+//	public void getDelete() {
+//		System.out.println("hello from delete");
+//	}
+	
+//	@RequestMapping(method = RequestMethod.GET)
+//	 String get(){
+//	   return "Hello from get";
+//	 }
+	
+//	
+}

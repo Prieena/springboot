@@ -1,0 +1,13 @@
+package com.priya.movieapp.Interface;
+
+import java.util.List;
+
+import com.priya.movieapp.Model.MovieModel;
+
+public interface MovieInterface {
+
+	public List<MovieModel> getAllMovies();
+	public MovieModel addMovie(MovieModel moviemodel);
+	 public boolean  delete(Integer id);
+	
+}

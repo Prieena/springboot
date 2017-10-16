@@ -1,0 +1,5 @@
+package com.priya.movieapp.Repository;
+
+public interface MovieRepository {
+
+}

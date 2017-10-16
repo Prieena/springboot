@@ -1,0 +1,17 @@
+package com.priya.movieapp.Controller;
+
+public class MovieController {
+
+	public void getAllMovieId() {
+		
+	}
+	
+	public void getAllMovieName() {
+		
+	}
+	
+	public void getSaved() {
+		
+	}
+	
+}

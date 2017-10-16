@@ -1,0 +1,40 @@
+package com.priya.movieapp.Service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.priya.movieapp.Interface.MovieInterface;
+import com.priya.movieapp.Model.MovieModel;
+
+@Service
+public class MovieService implements MovieInterface{
+
+	List<MovieModel> resultList = new ArrayList<>(Arrays.asList(
+            
+            new MovieModel(2, "ascl", "sddefsc", "gvhjgjjh"),
+            new MovieModel(3, "sacvha", "sac", "hghjgj")));
+
+	
+//@Override
+//public List<MovieModel> getAllMovies( )
+//{
+//    return resultList;
+//}
+	
+	
+@Override
+public String getAllMovies( )
+{
+    return "New data is created";
+}	
+
+@Override
+public void addMovie(MovieModel moviemodel)
+{
+    resultList.add(moviemodel);
+}
+	
+}

@@ -1,0 +1,28 @@
+package com.priya.movieapp.Service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import org.springframework.stereotype.Service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class MovieService {
+
+	   List<Restaurant> resultList = new ArrayList<>(Arrays.asList(
+	           new Restaurant(1, "social", "sddasc", 200),
+	               new Restaurant(2, "ascl", "sddefsc", 300),
+	               new Restaurant(3, "sacvha", "sac", 400)));
+	   
+	   public List<Restaurant> getAllRestaurant( )
+	   {
+	       return resultList;
+	   }
+	   
+
+	   public void addRestaurant(Restaurant restaurant)
+	   {
+	       resultList.add(restaurant);
+	   }
+}
